@@ -7,13 +7,13 @@
 2 + 2 = 4 
 '''
 
-slog_1 = int(input('Введите первое слогаемое: '))
-slog_2 = int(input('Введите второе слогаемое: '))
+a = int(input('Введите основание: '))
+b = int(input('Введите показатель степени: '))
 
-def summa(sl_1, sl_2):
-    if sl_2 == 0:
-        return sl_1
+def exponent(base, exp):
+    if exp == 1:
+        return base
     else:
-        return summa(sl_1, sl_2 - 1) + 1
+        return base * exponent(base, exp - 1)
     
-print(summa(slog_1, slog_2))
+print(exponent(a, b)) 
