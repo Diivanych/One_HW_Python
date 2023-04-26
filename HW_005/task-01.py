@@ -10,10 +10,10 @@ A = 3; B = 5 -> 243 (3⁵)
 a = int(input('Введите основание: '))
 b = int(input('Введите показатель степени: '))
 
-def exponent(aa, bb):
-    if bb == 1:
-        return aa
+def exponent(base, exp):
+    if exp == 1:
+        return base
     else:
-        return aa * exponent(aa, bb - 1)
+        return base * exponent(base, exp - 1)
     
 print(exponent(a, b)) 
