@@ -11,13 +11,15 @@
 
 import random
 
-n = int(input('Введите количество элементов в первом массиве: '))
+n = int(input('Введите количество элементов в массиве: '))
 numb = []
 for _ in range(n):
     numb.append(random.randint(0, 9))
 print(*numb)
 count = 0
+
 for i in range(n - 2):
-    if (numb[i + 1] > numb[i]) and (numb[i + 1] > numb[i + 2]):
+    if numb[i] < numb[i + 1] > numb[i + 2]:
         count += 1
+
 print(count)

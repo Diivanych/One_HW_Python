@@ -22,16 +22,16 @@ for _ in range(m):
 print(*numb1)
 print(*numb2)
 
-lst = []
-for i in range(n):
-    if numb1[i] not in numb2:
-        lst.append(numb1[i])
-        
-print(*lst)
+for i in numb1:
+    if i not in numb2:
+       print(i, end= ' ')
+
+
 
 '''
 lst = set(numb1) - set(numb2)
 print(*lst)
+
 lst = set(numb1).difference(set(numb2))
 print(*lst)
 '''
