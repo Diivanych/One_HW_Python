@@ -7,7 +7,7 @@
 2 + 2 = 4 
 '''
 
-a = int(input('Введите основание: '))slog_1 = int(input('Введите первое слогаемое: '))
+slog_1 = int(input('Введите первое слогаемое: '))
 slog_2 = int(input('Введите второе слогаемое: '))
 
 def summa(sl_1, sl_2):
@@ -17,4 +17,3 @@ def summa(sl_1, sl_2):
         return summa(sl_1, sl_2 - 1) + 1
     
 print(summa(slog_1, slog_2))
-print(exponent(a, b)) 
