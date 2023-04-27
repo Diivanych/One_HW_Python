@@ -20,3 +20,4 @@ right_lim = int(input('Введите правый лимит: '))
 for i in range(n):
     if left_lim <= numb[i] <= right_lim:
         print(f'({i}:{numb[i]}), ', end='')
+        
