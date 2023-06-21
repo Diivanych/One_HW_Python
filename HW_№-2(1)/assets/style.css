@@ -1,0 +1,64 @@
+body {
+    background-color: azure;
+}
+
+h1 {
+    color: blue;
+    font-size: 45px;
+    margin: 0;
+}
+
+.title {
+    color: orange;
+    font-size: 60px;
+}
+
+.titleDesc {
+    color: rgb(13, 0, 128);
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.box {
+    margin-top: 35px;
+    border: 5px dashed greenyellow;
+    padding: 20px;
+    width: 500px;
+    background-color: aquamarine;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagene {
+    margin-top: 35px;
+}
+
+.work {
+    color: rgb(32, 184, 83);
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.active {
+    color: red;
+    font-size: 55px;
+}
+
+.activeBox {
+    background-color: coral;
+}
+
+button {
+    width: 250px;
+    height: 150px;
+    font-size: 36px;
+    color: crimson;
+    background-color: darkgray;
+    margin-top: 35px;
+}
