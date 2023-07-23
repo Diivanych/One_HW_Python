@@ -44,14 +44,18 @@ def app():
 def edit():
     ls = []
     numdell = int(input('Введите номер записи для редактирования: '))
-    print(f'\n№ {numdell}. Владелец -', *phonebook[numdell])
-    num = int(input('Введите номер: '))
-    ls.append(input('Введите фамилию: ').upper())
-    ls.append(input('Введите имя: ').upper())
-    ls.append(input('Введите отчество: ').upper())
-    phonebook.pop(numdell)
-    phonebook[num] = ls
-    print(f'\n№ {num}. Владелец -', *phonebook[num])
+    if numdell in phonebook:
+        print(f'\n№ {numdell}. Владелец -', *phonebook[numdell])
+        num = int(input('Введите номер: '))
+        ls.append(input('Введите фамилию: ').upper())
+        ls.append(input('Введите имя: ').upper())
+        ls.append(input('Введите отчество: ').upper())
+        phonebook.pop(numdell)
+        phonebook[num] = ls
+        print(f'\n№ {num}. Владелец -', *phonebook[num])
+    else:
+        print('Такого номера в справочнике нет.')
+
 
 def pr():
     print('\nВы используете учебный телефонный справочник.'
