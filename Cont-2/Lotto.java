@@ -13,7 +13,7 @@ public class Lotto {
     Toy new02 = new Toy(1, "ПЬЕРО", 0, 0, 0);
     Toy new03 = new Toy(2, "АРТЕМОН", 0, 0, 0);
 
-    private static int idCounter = 4;
+    private static int idCounter = 3;
 
     public void fillToy() {
         toys.add(new01);
@@ -112,7 +112,7 @@ public class Lotto {
         game.clear();
         prizes.clear();
         Random rnd = new Random();
-        for (int j = 0; j < 10; j ++) {
+        for (int j = 0; j < 1000; j ++) {
             int temp = rnd.nextInt(1, 101);
             for( int i = 0; i < toys.size(); i ++) {
                 if((temp > toys.get(i).getMin()) & (temp <= toys.get(i).getMax()))
@@ -120,7 +120,7 @@ public class Lotto {
                     prizes.add(toys.get(i).getToyTitle());
             }
         }
-        System.out.println("Печатаем GAME" + game);
+//        System.out.println("Печатаем GAME" + game);
         int calc = 0;
         game.toArray();
         for( int i = 0; i < toys.size(); i ++) {
@@ -129,9 +129,27 @@ public class Lotto {
                 if(s == i) {
                     calc ++;
                 }
-            System.out.println("I = " + calc);        
+//            System.out.println("I = " + calc); 
+            System.out.println("Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.");        
 
         }
+
+
+        // System.out.println("Печатаем GAME" + game);
+        // int calc = 0;
+        // game.toArray();
+        // for( int i = 0; i < toys.size(); i ++) {
+        //     calc = 0;
+        //     for(int s : game) 
+        //         if(s == i) {
+        //             calc ++;
+        //         }
+        //     System.out.println("I = " + calc);        
+
+        // }
+
+
+//        System.out.println("Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.");
     }
 
     // public Toy getPrize() {
