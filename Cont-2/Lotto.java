@@ -122,7 +122,7 @@ public class Lotto {
                     prizes.add(toys.get(i).getToyTitle());
             }
         }
-//        System.out.println("Печатаем GAME" + game);
+
         int calc = 0;
         game.toArray();
         for( int i = 0; i < toys.size(); i ++) {
@@ -131,55 +131,11 @@ public class Lotto {
                 if(s == i) {
                     calc ++;
                 }
-//            System.out.println("I = " + calc); 
-
-                
-
             String str = "Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.";
             saveResult(str);        
-
         }
 
-
-        // System.out.println("Печатаем GAME" + game);
-        // int calc = 0;
-        // game.toArray();
-        // for( int i = 0; i < toys.size(); i ++) {
-        //     calc = 0;
-        //     for(int s : game) 
-        //         if(s == i) {
-        //             calc ++;
-        //         }
-        //     System.out.println("I = " + calc);        
-
-        // }
-
-
-//        System.out.println("Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.");
     }
-
-    // public Toy getPrize() {
-    //     if (prizes.size() == 0) {
-    //         Random rnd = new Random();
-    //         for (Toy toy : toys) {
-    //             for (int i = 0; i < toy.getToyVictoryFrequency(); i++) {
-    //                 Toy temp = new Toy(toy.getToyId(), toy.getToyTitle(), rnd.nextInt(1, 10), toy.getMin(), toy.getMax());
-    //                 prizes.add(temp);
-    //             }
-    //         }
-    //     }
-    //     return prizes.poll();
-    // }
-
-    // public void Lotto() {
-    //     if (toys.size() >= 2) {
-    //         Toy prize = getPrize();
-    //         System.out.println("Приз: " + prize.getToyTitle());
-    //         saveResult(prize.getInfo());
-    //     } else {
-    //         System.out.println("В розыгрыше должно быть более одной игрушки.");
-    //     }
-    // }
         
     private void saveResult(String text) {
         File file = new File("Result.txt");
@@ -194,5 +150,4 @@ public class Lotto {
             System.out.println(ex.getMessage());
         }
     }
-    
 }
