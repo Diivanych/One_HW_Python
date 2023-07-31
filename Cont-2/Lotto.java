@@ -109,6 +109,8 @@ public class Lotto {
     
     public void Game() {
 
+        
+
         game.clear();
         prizes.clear();
         Random rnd = new Random();
@@ -130,7 +132,11 @@ public class Lotto {
                     calc ++;
                 }
 //            System.out.println("I = " + calc); 
-            System.out.println("Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.");        
+
+                
+
+            String str = "Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.";
+            saveResult(str);        
 
         }
 
@@ -174,7 +180,7 @@ public class Lotto {
     //         System.out.println("В розыгрыше должно быть более одной игрушки.");
     //     }
     // }
-
+        
     private void saveResult(String text) {
         File file = new File("Result.txt");
         try {
@@ -188,4 +194,5 @@ public class Lotto {
             System.out.println(ex.getMessage());
         }
     }
+    
 }
