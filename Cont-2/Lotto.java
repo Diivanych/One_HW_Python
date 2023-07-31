@@ -13,7 +13,7 @@ public class Lotto {
     Toy new02 = new Toy(1, "ПЬЕРО", 0, 0, 0);
     Toy new03 = new Toy(2, "АРТЕМОН", 0, 0, 0);
 
-    private static int idCounter = 3;
+    
 
     public void fillToy() {
         toys.add(new01);
@@ -21,16 +21,16 @@ public class Lotto {
         toys.add(new03);
     }
 
+    private static int idCounter = 3;
+
     public void showToy() {
         for(int i = 0; i < toys.size(); i ++)         
             System.out.println("Игрушка № - " +  i + " называется: '" + toys.get(i).getToyTitle() +
             "' имеет процент выпадения " + toys.get(i).getToyVictoryFrequency() + 
             " Нижняя планка " + toys.get(i).getMin() + " Верхняя планка " + toys.get(i).getMax());
     }
-
     
     public void addToy() {
-
         int min = 0;
         int max = 0;
         int frequency = 0;
@@ -59,14 +59,12 @@ public class Lotto {
     public void setFrequency() {
         Scanner scan = new Scanner(System.in, "cp866");
         String value;
-
         for(int i = 0; i < toys.size(); i ++) {
             if(i == 0) {
                 System.out.println("\nИгрушка " + toys.get(i).getToyTitle() +
                     " имеет процент выпадения " + toys.get(i).getToyVictoryFrequency());
                 System.out.print("Введите процент выпадения от 0 до 100:" + " -> ");
                 value = scan.nextLine();
-            
                 if (isDigit(value)) {
                     int newFrequency = Integer.parseInt(value);
                     toys.get(i).setToyVictoryFrequency(newFrequency);
@@ -78,7 +76,6 @@ public class Lotto {
                 }
             } 
             else {
-                
                 System.out.println("\nИгрушка " + toys.get(i).getToyTitle() +
                 " имеет процент выпадения " + toys.get(i).getToyVictoryFrequency());
                 System.out.print("Осталось распределить процент для " + (toys.size() - i) + " игрушек.\n");
@@ -108,9 +105,6 @@ public class Lotto {
     }
     
     public void Game() {
-
-        
-
         game.clear();
         prizes.clear();
         Random rnd = new Random();
@@ -122,7 +116,6 @@ public class Lotto {
                     prizes.add(toys.get(i).getToyTitle());
             }
         }
-
         int calc = 0;
         game.toArray();
         for( int i = 0; i < toys.size(); i ++) {
@@ -131,10 +124,10 @@ public class Lotto {
                 if(s == i) {
                     calc ++;
                 }
+            System.out.println("Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.");
             String str = "Игрушка " + toys.get(i).getToyTitle() + " имеет процент выигрыша " + toys.get(i).getToyVictoryFrequency() + " и выпала "  + calc + " раз.";
             saveResult(str);        
         }
-
     }
         
     private void saveResult(String text) {
